@@ -1,4 +1,4 @@
-CFLAGS = -std=c++11 -c
+CFLAGS = -std=c++11 -Wall
 CC = g++
 
 all: build
@@ -18,16 +18,17 @@ college.o: college.cc college.h course.cc course.h
 collegemain.o: collegemain.cc course.h college.h
 	$(CC) $(CFLAGS) collegemain.cc
 
-test: build runtest
+#test: build runtest
 
-runtest: test_college
-	./test_college
+#runtest: test_college
+#	./test_college
 
-test_college.o: test_college.cc
-		$(CC) $(CFLAGS) test_college.cc
+#test_college.o: test_college.cc
+#		$(CC) $(CFLAGS) test_college.cc
 
-test_college: college.o test_college.o course.o
-	$(CC) -o test_college test_college.o college.o course.o
+#test_college: college.o test_college.o course.o
+#	$(CC) -o test_college test_college.o college.o course.o
 
 clean:
-	rm -f *.o collegemain test_college
+	rm -f *.o collegemain
+	#test_college
