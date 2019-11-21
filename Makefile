@@ -1,4 +1,4 @@
-CFLAGS = -std=c++11 -Wall 
+CFLAGS = -std=c++98 -Wall -c
 CC = g++
 
 all: build
@@ -24,10 +24,11 @@ runtest: test_college
 	./test_college
 
 test_college.o: test_college.cc
-		$(CC) $(CFLAGS) test_college.cc -c
+		$(CC) $(CFLAGS) test_college.cc 
 
 test_college: college.o test_college.o course.o
 	$(CC) -o test_college test_college.o college.o course.o
+
 
 clean:
 	rm -f *.o collegemain test_college
