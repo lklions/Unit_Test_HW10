@@ -1,4 +1,4 @@
 language: c++
 compiler: clang
 script:
-  - cmake
+  - make all
